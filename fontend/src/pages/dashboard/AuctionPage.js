@@ -15,8 +15,12 @@ import {
   Divider,
   CircularProgress,
 } from '@mui/material';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProductById } from '../../redux/slices/product';
 
-export default function AuctionPage(){
+
+
+
 const StyledAuctionContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(3),
   paddingBottom: theme.spacing(3),
@@ -37,8 +41,14 @@ const AuctionPage = () => {
   console.log(id);
   const [timeLeft, setTimeLeft] = useState('00:00:00'); // Thời gian còn lại
   const [bidAmount, setBidAmount] = useState(''); // Số tiền đấu giá
-  const [loading, setLoading] = useState(true); // Trạng thái loading khi tải thông tin sản phẩm
-
+  const [loading, setLoading] = useState(false); // Trạng thái loading khi tải thông tin sản phẩm
+  const dispatch = useDispatch();
+  const {product, isLoading} = useSelector((state) => state.product);
+   useEffect(() => {
+    // Gọi action để load danh sách phiên đấu giá khi component được render
+    dispatch(getProductById(id));
+  }, [dispatch]);
+  console.log(product);
   // Giả sử bạn có một hàm để lấy thông tin sản phẩm từ ID
   // const product = fetchProductById(id);
 
@@ -84,12 +94,12 @@ const AuctionPage = () => {
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               {/* Thay thế "/path/to/product/image.jpg" bằng đường dẫn thực tế của hình ảnh sản phẩm */}
-              <StyledImage src="/path/to/product/image.jpg" alt="Product" />
+              <StyledImage src={product.images[0]} alt="Product" />
             </Grid>
             <Grid item xs={12} md={6}>
               <Typography variant="h4" gutterBottom>
                 {/* Thay thế "Auction Title" bằng tên thực tế của sản phẩm */}
-                Auction Title
+                {product.name}
               </Typography>
               <Typography variant="h6" color="textSecondary" gutterBottom>
                 {/* Thay thế "Username" bằng tên người đấu giá cao nhất */}
@@ -126,4 +136,6 @@ const AuctionPage = () => {
       </Paper>
     </StyledAuctionContainer>
   );
-}; }
+}; 
+
+export default AuctionPage;

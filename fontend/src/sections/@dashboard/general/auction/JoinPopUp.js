@@ -52,7 +52,7 @@ const JoinPopup = ({ open, onClose, data }) => {
   const navigate = useNavigate();
 
   const handleJoin = () => {
-    navigate(`/auction/${data.id}`); // Điều hướng đến AuctionPage với ID sản phẩm
+    navigate(`/dashboard/auction/${data.id}`); // Điều hướng đến AuctionPage với ID sản phẩm
     onClose(); // Đóng popup sau khi điều hướng
   };
 

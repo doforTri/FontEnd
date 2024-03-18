@@ -74,7 +74,7 @@ function AuthProvider({ children }) {
         if (accessToken && isValidToken(accessToken)) {
           setSession(accessToken);
 
-          const response = await axios.get('localhost:8080/users/my-account');
+          const response = await axios.get('/users/my-account');
           console.log(response.data.data)
           const { user } = response.data.data;
 
@@ -110,7 +110,7 @@ function AuthProvider({ children }) {
   }, []);
 
   const login = async (email, password) => {
-    const response = await axios.post('localhost:8080/login', {
+    const response = await axios.post('http://localhost:8080/login', {
       email,
       password,
     });
@@ -134,7 +134,7 @@ function AuthProvider({ children }) {
     formData.append('lastName', lastName);
     formData.append('displayName', displayName);
 
-    const response = await axios.post('localhost:8080/users/register', formData, {
+    const response = await axios.post('http://localhost:8080/users/register', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

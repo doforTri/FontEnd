@@ -88,7 +88,9 @@ export default function AuctionTableRow({ row, selected, onSelectRow, onViewRow,
       <TableCell align="center" sx={{ textTransform: 'capitalize' }}>
         {product.category}
       </TableCell>
-
+      <TableCell align="center" sx={{ textTransform: 'capitalize' }}>
+        {product.status}
+      </TableCell>
       <TableCell align="right">
         
         

@@ -100,8 +100,6 @@ export default function Auction() {
 
   const {auctions, isLoading} = useSelector((state) => state.auction);
 
-  console.log(auctions)
-
 
   const [tableData, setTableData] = useState([]);
 

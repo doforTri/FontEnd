@@ -241,3 +241,17 @@ export function getProduct(name) {
     }
   };
 }
+
+  export function getProductById(id) {
+  return async () => {
+    dispatch(slice.actions.startLoading());
+    try {
+      const response = await axios.get(`/product/${id}`);
+      console.log(response.data.data)
+      dispatch(slice.actions.getProductSuccess(response.data.data));
+    } catch (error) {
+      console.error(error);
+      dispatch(slice.actions.hasError(error));
+    }
+  };
+}

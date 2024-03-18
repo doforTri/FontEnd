@@ -100,7 +100,7 @@ export function getAuctions() {
   return async () => {
     dispatch(auctionSlice.actions.loadAuctions());
     try {
-      const response = await axios.post('/auction/search', {
+      const response = await axios.post('http://localhost:8080/auction/search', {
                 keyword: "",
                 currentPage: 0,
                 size: 100,
