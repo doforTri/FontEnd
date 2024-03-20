@@ -94,12 +94,14 @@ const AuctionPage = () => {
           <Grid container spacing={3}>
             <Grid item xs={12} md={6}>
               {/* Thay thế "/path/to/product/image.jpg" bằng đường dẫn thực tế của hình ảnh sản phẩm */}
+              
               <StyledImage src={product.images[0]} alt="Product" />
             </Grid>
             <Grid item xs={12} md={6}>
               <Typography variant="h4" gutterBottom>
-                {/* Thay thế "Auction Title" bằng tên thực tế của sản phẩm */}
-                {product.name}
+                 {/* Thay thế "Auction Title" bằng tên thực tế của sản phẩm */}
+             
+                {/* {product.name} */}
               </Typography>
               <Typography variant="h6" color="textSecondary" gutterBottom>
                 {/* Thay thế "Username" bằng tên người đấu giá cao nhất */}
