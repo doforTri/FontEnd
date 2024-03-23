@@ -165,7 +165,7 @@ export default function EcommerceShop() {
 
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 2 }}>
           <Pagination
-            count={Math.ceil(filteredProducts.length / 4) + 1}
+            count={Math.ceil(filteredProducts.length / 4) + 3}
             size="large"
             color="primary"
             page={currentPage}

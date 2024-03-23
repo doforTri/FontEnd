@@ -172,10 +172,10 @@ export default function ProductNewEditForm({ isEdit, currentProduct }) {
       let response;
       if (isEdit) {
         // Call the API to update the product
-        response = await axios.put(`http://localhost:8080/product/${currentProduct.id}`, formData);
+        response = await axios.put(`/product/${currentProduct.id}`, formData);
       } else {
         // Call the API to create a new product
-        response = await axios.post('http://localhost:8080/product/', formData);
+        response = await axios.post('/product/', formData);
       }
       console.log(JSON.stringify(response.data));
 

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import sum from 'lodash/sum';
 import uniqBy from 'lodash/uniqBy';
-
+import { put, takeLatest, all } from 'redux-saga/effects';
 import axios from '../../utils/axios';
 import { dispatch } from '../store';
 
@@ -100,7 +100,7 @@ export function getAuctions() {
   return async () => {
     dispatch(auctionSlice.actions.loadAuctions());
     try {
-      const response = await axios.post('/auction/search', {
+      const response = await axios.post('http://47.129.6.242/auction/search', {
                 keyword: "",
                 currentPage: 0,
                 size: 100,

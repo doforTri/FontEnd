@@ -74,7 +74,7 @@ function AuthProvider({ children }) {
         if (accessToken && isValidToken(accessToken)) {
           setSession(accessToken);
 
-          const response = await axios.get('/users/my-account');
+          const response = await axios.get('http://localhost:8080/users/my-account');
           console.log(response.data.data)
           const { user } = response.data.data;
 

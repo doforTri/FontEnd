@@ -123,7 +123,7 @@ export default function SignUpBuyer() {
               <Link underline="always" color="text.primary" href="#">
                 Terms of Service
               </Link>
-              and
+              &nbsp; & &nbsp;
               <Link underline="always" color="text.primary" href="#">
                 Privacy Policy
               </Link>

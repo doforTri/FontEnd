@@ -17,6 +17,9 @@ import Page from '../../components/Page';
 import Iconify from '../../components/Iconify';
 import Markdown from '../../components/Markdown';
 import { SkeletonProduct } from '../../components/skeleton';
+
+// import { addToWishlist } from '../../../src/redux/wishlistActions';
+
 import HeaderBreadcrumbs from '../../components/HeaderBreadcrumbs';
 // sections
 import {

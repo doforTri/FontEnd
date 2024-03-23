@@ -101,9 +101,11 @@ export default function SignUpSeller() {
             <Box sx={{ mb: 5, display: 'flex', alignItems: 'center' }}>
               <Box sx={{ flexGrow: 1 }}>
                 <Typography variant="h4" gutterBottom>
-                Join Our Seller Community for Free!
+                  Join Our Seller Community for Free!
                 </Typography>
-                <Typography sx={{ color: 'text.secondary' }}>Start Selling Today and Enjoy the Benefits of Being a Seller at Arena Orchid</Typography>
+                <Typography sx={{ color: 'text.secondary' }}>
+                  Start Selling Today and Enjoy the Benefits of Being a Seller at Arena Orchid
+                </Typography>
               </Box>
               <Tooltip title={capitalCase(method)}>
                 <>
@@ -123,7 +125,7 @@ export default function SignUpSeller() {
               <Link underline="always" color="text.primary" href="#">
                 Terms of Service
               </Link>
-              and
+              &nbsp; & &nbsp;
               <Link underline="always" color="text.primary" href="#">
                 Privacy Policy
               </Link>

@@ -7,7 +7,7 @@ export const fullName = [
   'Harrison Stein',
   'Reece Chung',
   'Lainey Davidson',
-  'Cristopher Cardenas',
+  'Bao Tran',
   'Melanie Noble',
   'Chase Day',
   'Shawn Manning',
@@ -40,7 +40,7 @@ export const fullName = [
   'Aidan Stout',
   'Jace Bush',
   'Janiya Williamson',
-  'Hudson Alvarez'
+  'Hudson Alvarez',
 ];
 
 export const firstName = [
@@ -83,7 +83,7 @@ export const firstName = [
   'Elinor',
   'Adeline',
   'Haley',
-  'Anabelle'
+  'Anabelle',
 ];
 
 export const lastName = [
@@ -126,5 +126,5 @@ export const lastName = [
   'Jones',
   'Leffler',
   'Gutkowski',
-  'Homenick'
+  'Homenick',
 ];
