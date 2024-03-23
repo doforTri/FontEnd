@@ -39,16 +39,16 @@ export default function CheckoutOrderComplete({ ...other }) {
   return (
     <DialogStyle fullScreen {...other}>
       <Box sx={{ p: 4, maxWidth: 480, margin: 'auto' }}>
-        <Box sx={{ textAlign: 'center' }}>
+        <Box sx={{ textAlign: 'center'  }}>
           <Typography variant="h4" paragraph>
             Thank you for your purchase!
           </Typography>
 
           <OrderCompleteIllustration sx={{ height: 260, my: 10 }} />
 
-          <Typography align="left" paragraph>
-            Thanks for placing order &nbsp;
-            <Link href="#">01dc1370-3df6-11eb-b378-0242ac130002</Link>
+          <Typography align="left" paragraph fontSize="30">
+
+            <Link >We will contact you for delivery </Link>
           </Typography>
 
           <Typography align="left" sx={{ color: 'text.secondary' }}>

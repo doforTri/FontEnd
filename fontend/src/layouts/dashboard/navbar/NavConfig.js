@@ -78,11 +78,10 @@ const navConfig = [
        // Auction
        {
         title: 'Auction',
-        path: PATH_DASHBOARD.eCommerce.root,
+        path: PATH_DASHBOARD.auction.root,
         icon: ICONS.cart,
         children: [
-          { title: 'list', path: PATH_DASHBOARD.eCommerce.list },
-          { title: 'create', path: PATH_DASHBOARD.eCommerce.new },
+          { title: 'create', path: PATH_DASHBOARD.auction.create },
           { title: 'edit', path: PATH_DASHBOARD.eCommerce.demoEdit },
         
         ],

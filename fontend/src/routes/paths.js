@@ -88,10 +88,10 @@ export const PATH_DASHBOARD = {
     demoEdit: path(ROOTS_DASHBOARD, '/e-commerce/product/nike-blazer-low-77-vintage/edit'),
     demoView: path(ROOTS_DASHBOARD, '/e-commerce/product/nike-air-force-1-ndestrukt'),
   },
-  Auction: {
-    root: path(ROOTS_DASHBOARD, '/auction'),
-    list: path(ROOTS_DASHBOARD, '/auction/list'),
-    create : path(ROOTS_DASHBOARD,'/auction/create')
+  auction: {
+    root: path(ROOTS_DASHBOARD, '/manage'),
+  
+    create : path(ROOTS_DASHBOARD,'/manage/create')
     
   },
   
@@ -104,9 +104,7 @@ export const PATH_DASHBOARD = {
     demoEdit: path(ROOTS_DASHBOARD, '/invoice/e99f09a7-dd88-49d5-b1c8-1daf80c2d7b1/edit'),
     demoView: path(ROOTS_DASHBOARD, '/invoice/e99f09a7-dd88-49d5-b1c8-1daf80c2d7b5'),
   },
-  auction: {
-    root: path(ROOTS_DASHBOARD,'auction'),
-  },
+  
   blog: {
     root: path(ROOTS_DASHBOARD, '/blog'),
     posts: path(ROOTS_DASHBOARD, '/blog/posts'),

@@ -93,11 +93,10 @@ export default function EcommerceShop() {
     setValue('size', '');
   };
 
-  const handleSearch = (query) => {
-    setCurrentPage(1); // Reset currentPage về 1 khi thực hiện tìm kiếm
-    setSearchQuery(query);
-    // Gọi hàm filterProducts hoặc thực hiện các bước xử lý tìm kiếm
-    // dispatch(filterProducts(values));
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+    setCurrentPage(1);
+    dispatch(filterProducts(event.target.value));
   };
   const handleRemovePrice = () => {
     setValue('priceRange', '');
@@ -165,7 +164,7 @@ export default function EcommerceShop() {
 
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 2 }}>
           <Pagination
-            count={Math.ceil(filteredProducts.length / 4) + 3}
+            count={Math.ceil(filteredProducts.length / 4)}
             size="large"
             color="primary"
             page={currentPage}
@@ -217,7 +216,7 @@ function applyFilter(products, sortBy, filters, currentPage, searchQuery) {
   }
   if (filters.size && filters.size.length > 0) {
     products = products.filter((product) => filters.size.includes(product.size));
-  
+
     return products;
   }
   if (searchQuery) {

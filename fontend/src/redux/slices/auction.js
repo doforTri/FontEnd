@@ -100,7 +100,7 @@ export function getAuctions() {
   return async () => {
     dispatch(auctionSlice.actions.loadAuctions());
     try {
-      const response = await axios.post('http://47.129.6.242/auction/search', {
+      const response = await axios.post('/auction/search', {
                 keyword: "",
                 currentPage: 0,
                 size: 100,
@@ -113,7 +113,19 @@ export function getAuctions() {
     }
   };
 }
-
+export function getAuctionById(id) {
+  return async () => {
+    dispatch(auctionSlice.actions.startLoading());
+    try {
+      const response = await axios.get(`/auction/${id}`);
+      console.log(response.data.data)
+      dispatch(auctionSlice.actions.getAuctionSuccess(response.data.data));
+    } catch (error) {
+      console.error(error);
+      dispatch(auctionSlice.actions.hasError(error));
+    }
+  };
+}
 // // Sagas
 // // API get all auction
 // function* loadAuctionsAPI() {

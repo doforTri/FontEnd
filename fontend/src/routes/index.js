@@ -1,6 +1,8 @@
+
 import { Suspense, lazy } from 'react';
 import { Navigate, useRoutes, useLocation } from 'react-router-dom';
 // layouts
+
 import MainLayout from '../layouts/main';
 import DashboardLayout from '../layouts/dashboard';
 import LogoOnlyLayout from '../layouts/LogoOnlyLayout';
@@ -12,6 +14,8 @@ import AuthGuard from '../guards/AuthGuard';
 import { PATH_AFTER_LOGIN } from '../config';
 // components
 import LoadingScreen from '../components/LoadingScreen';
+
+
 
 
 // ----------------------------------------------------------------------
@@ -85,7 +89,22 @@ export default function Router() {
             { path: 'product/:name/edit', element: <EcommerceProductCreate /> },
             // { path: 'checkout', element: <EcommerceCheckout /> },
           ],
+        },{
+          path: 'auction',
+          children: [
+            {element: <Navigate to="/dashboard/auction/list" replace />, index: true },
+            { path: 'list', element: <GeneralAuction /> },
+            { path: 'manage/create', element: <AuctionCreate /> },
+          ],
         },
+
+        {
+          path: 'manage',
+          children: [
+            { path: 'create', element: <AuctionCreate /> },
+          ],
+        },
+    
         {
           path: 'user',
           children: [
@@ -185,6 +204,7 @@ const LoginSeller = Loadable(lazy(() => import('../pages/auth/LoginSeller')));
 const SignUpBuyer = Loadable(lazy(() => import('../pages/auth/SignupBuyer')));
 const SignUpSeller = Loadable(lazy(() => import('../pages/auth/SignupSeller')));
 const AuctionPage = Loadable(lazy(() => import('../pages/dashboard/AuctionPage')));
+const AuctionCreate = Loadable(lazy(() => import('../pages/dashboard/AuctionCreate')))
 
 // DASHBOARD
 
